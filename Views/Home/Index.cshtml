@@ -1,0 +1,47 @@
+﻿@model StudentInfoModel[]
+
+@{ 
+    ViewBag.Title = "DotNetSample";
+}
+
+<style>
+    .student-table {
+        width: 100%
+    }
+    .student-table th {
+        border: 1px solid #000000;
+        padding: 12px 55px;
+        background: #9FE2BF;
+        }
+    .student-table td {
+        border: 1px solid #000000;
+        padding: 12px 55px;
+        background: #EADDCA;
+    }
+</style>
+
+<h1> Student Information </h1>
+
+<table border="1" class="student-table">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Student ID </th>
+            <th> Age </th>
+            <th> Address </th>
+            <th> Course </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td> @student.Name </td>
+                <td> @student.StudentId </td>
+                <td> @student.StudentAge </td>
+                <td> @student.Address  </td>
+                <td> @student.StudentCourse </td>
+            </tr>
+        }
+    </tbody>
+</table>
